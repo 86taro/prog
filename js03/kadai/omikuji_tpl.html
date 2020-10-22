@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>おみくじ</title>
+</head>
+<body>
+
+<header>
+    <h1 id="omkj">おみくじ</h1>
+</header>
+
+<main>
+    <ul>
+        <li id="pull">今日の運勢を占う</li>
+    </ul>
+    <p id="echo"></p>
+</main>
+
+<footer id="ft">フッター</footer>
+
+<script>
+
+//タイトルデザイン
+const omkj = document.querySelector("#omkj");
+omkj.style.backgroundColor="#9A725C";
+
+//Clickイベントのブロック
+const pull = document.querySelector("#pull");
+pull.onclick = function(){
+    
+    //アラートでコメント
+    const kmnt = Math.ceil(Math.random() * 3);
+    if(kmnt==1){
+        alert("さあ、どうでしょうか・・・？");
+    }
+    if(kmnt==2){
+        alert("心の準備はいいですか？　せーの・・・");
+    }
+    if(kmnt==3){
+        alert("運命の瞬間です！");
+    }
+
+    //おみくじ
+    const num = Math.ceil(Math.random() * 5);
+    const echo = document.querySelector("#echo");
+    if(num==1){
+        echo.innerHTML='<img src="omikuji_daikichi.png">';
+    }
+    if(num==2){
+        echo.innerHTML='<img src="omikuji_chuukichi.png">';
+    }
+    if(num==3){
+        echo.innerHTML='<img src="omikuji_syoukichi.png">';
+    }
+    if(num==4){
+        echo.innerHTML='<img src="omikuji_kichi.png">';
+    }
+    if(num==5){
+        echo.innerHTML='<img src="omikuji_kyou.png">';
+    }
+}
+
+//pullデザイン
+pull.style.color="#ff0000";
+
+//フッターデザイン
+const ft=document.querySelector("#ft");
+ft.style.backgroundColor="#9A725C";
+
+</script>
+</body>
+</html>
