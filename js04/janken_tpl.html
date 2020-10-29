@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>じゃんけん</title>
+</head>
+<body>
+
+<header>
+  <h1>じゃーんけーん・・・</h1>
+</header>
+
+<main>
+  <ul>
+    <li id="gu_btn"></li>
+    <li id="cho_btn"></li>
+    <li id="par_btn"></li>
+  </ul>
+  <div><span id="pc_hands"></span></div>
+  <br>
+  <div id="judgment1"></div>
+  <div id="judgment2"></div>
+</main>
+
+<footer></footer>
+<script>
+//じゃんけん用のSCRIPTを書いてください
+
+//グー・チョキ・パーの画像
+$("#gu_btn").html('<img src="janken_gu1.png">');
+$("#cho_btn").html('<img src="janken_choki1.png">');
+$("#par_btn").html('<img src="janken_pa1.png">');
+
+//グーのボタン
+$("#gu_btn").on("click", function(){
+  //乱数
+  const num = Math.ceil(Math.random() * 3);
+  if(num == 1){
+    $("#pc_hands").html('コンピュータは<img src="janken_gu2.png">');
+    $("#pc_hands").css("color", "#8f6552");
+    $("#judgment1").html("引き分け");
+    $("#judgment1").css("fontSize", "50px");
+    $("#judgment1").css("color","#ffa500");
+    $("#judgment2").html("あーいこーで…");
+    $("#judgment2").css("color", "#8f6552");
+  }
+  if(num == 2){
+    $("#pc_hands").html('コンピュータは<img src="janken_choki2.png">');
+    $("#pc_hands").css("color", "#8f6552");
+    $("#judgment1").html("勝ち！");
+    $("#judgment1").css("fontSize", "50px");
+    $("#judgment1").css("color","#ff0000");
+    $("#judgment2").html("やった！✨✨✨");
+    $("#judgment2").css("color", "#8f6552");
+  }
+  if(num == 3){
+    $("#pc_hands").html('コンピュータは<img src="janken_pa2.png">');
+    $("#pc_hands").css("color", "#8f6552");
+    $("#judgment1").html("負け…")
+    $("#judgment1").css("fontSize", "50px");
+    $("#judgment1").css("color","#0000ff");
+    $("#judgment2").html("ざんねん…💦");
+    $("#judgment2").css("color", "#8f6552");
+  }
+});
+
+//チョキのボタン
+$("#cho_btn").on("click", function(){
+  //乱数
+  const num = Math.ceil(Math.random() * 3);
+  if(num == 1){
+    $("#pc_hands").html('コンピュータは<img src="janken_gu2.png">');
+    $("#pc_hands").css("color", "#8f6552");
+    $("#judgment1").html("負け…")
+    $("#judgment1").css("fontSize", "50px");
+    $("#judgment1").css("color","#0000ff");
+    $("#judgment2").html("ざんねん…💦");
+    $("#judgment2").css("color", "#8f6552");
+  }
+  if(num == 2){
+    $("#pc_hands").html('コンピュータは<img src="janken_choki2.png">');
+    $("#pc_hands").css("color", "#8f6552");
+    $("#judgment1").html("引き分け");
+    $("#judgment1").css("fontSize", "50px");
+    $("#judgment1").css("color","#ffa500");
+    $("#judgment2").html("あーいこーで…");
+    $("#judgment2").css("color", "#8f6552");
+  }
+  if(num == 3){
+    $("#pc_hands").html('コンピュータは<img src="janken_pa2.png">');
+    $("#pc_hands").css("color", "#8f6552");
+    $("#judgment1").html("勝ち！");
+    $("#judgment1").css("fontSize", "50px");
+    $("#judgment1").css("color","#ff0000");
+    $("#judgment2").html("やった！✨✨✨");
+    $("#judgment2").css("color", "#8f6552");
+  }
+});   
+
+//パーのボタン
+$("#par_btn").on("click", function(){
+  //乱数
+  const num = Math.ceil(Math.random() * 3);
+  if(num == 1){
+    $("#pc_hands").html('コンピュータは<img src="janken_gu2.png">');
+    $("#pc_hands").css("color", "#8f6552");
+    $("#judgment1").html("勝ち！");
+    $("#judgment1").css("fontSize", "50px");
+    $("#judgment1").css("color","#ff0000");
+    $("#judgment2").html("やった！✨✨✨");
+    $("#judgment2").css("color", "#8f6552");
+  }
+  if(num == 2){
+    $("#pc_hands").html('コンピュータは<img src="janken_choki2.png">');
+    $("#pc_hands").css("color", "#8f6552");
+    $("#judgment1").html("負け…")
+    $("#judgment1").css("fontSize", "50px");
+    $("#judgment1").css("color","#0000ff");
+    $("#judgment2").html("ざんねん…💦");
+    $("#judgment2").css("color", "#8f6552");
+  }
+  if(num == 3){
+    $("#pc_hands").html('コンピュータは<img src="janken_pa2.png">');
+    $("#pc_hands").css("color", "#8f6552");
+    $("#judgment1").html("引き分け");
+    $("#judgment1").css("fontSize", "50px");
+    $("#judgment1").css("color","#ffa500");
+    $("#judgment2").html("あーいこーで…");
+    $("#judgment2").css("color", "#8f6552");
+  }
+});
+    
+
+</script>
+</body>
+</html>
