@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1></h1>
+
+
+<script>
+
+//関数定義
+function tasu(x,y){
+    const t = x + y;
+    return t;
+}
+function hiku(x,y){
+    const h = x - y;
+    return h;
+}
+function kakeru(x,y){
+    const k = x * y;
+    return k;
+}
+function waru(x,y){
+    const w = x / y;
+    return w;
+}
+
+//関数実行
+const a = tasu(4,1);
+const b = hiku(12,8);
+const c = kakeru(1,3);
+const d = waru(10,5);
+const sum = a + b + c + d;
+document.querySelector("h1").innerHTML=sum;   //ここが自力でできなかった…
+
+</script>
+    
+</body>
+</html>
