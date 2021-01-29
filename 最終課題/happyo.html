@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>アルファベット診断</title>
+</head>
+<body>
+
+<header>
+    <h1>勝手に！アルファベット診断！</h1>
+</header>
+
+<main>
+  <h2 id="quest">ここに問題が出題されます</h2>
+  <p id="sts">
+    <input type="radio" name="toi" value="1"><span id="toi1">選択肢１</span>
+    <input type="radio" name="toi" value="2"><span id="toi2">選択肢２</span>
+  </p>
+  <h3 id="gazou"></h3>
+  <p id="bun"></p>
+</main>
+
+<footer>フッター</footer>
+<script>
+//ここから記述領域［START］
+
+  //以下に配列を記述してください。
+  //問題文[配列]
+  const qs = [
+    "今ふと気になった色はどっち？",
+    "直感で選んで！",
+    "どちらが好き？"
+  ];
+    
+  //回答選択肢[多重配列]
+  const toi = [
+    ["オレンジ","ピンク"],
+    ["1","2"],
+    ["夜景が綺麗な場所","自然豊かな場所"]
+  ];
+    
+  //答え[配列]
+  const ans1 = [1, 1, 1];
+  const ans2 = [1, 1, 2];
+  const ans3 = [1, 2, 1];
+  const ans4 = [1, 2, 2];
+  const ans5 = [2, 1, 1];
+  const ans6 = [2, 1, 2];
+  const ans7 = [2, 2, 1];
+  const ans8 = [2, 2, 2];
+
+  const ar = "";
+  const kekka = [];
+  if(kekka == ans1){
+    ar = "M";
+  }else if(kekka == ans2){
+    ar = "h";
+  }else if(kekka == ans2){
+    ar = "z";
+  }else if(kekka == ans2){
+    ar = "J";
+  }else if(kekka == ans2){
+    ar = "A";
+  }else if(kekka == ans2){
+    ar = "r";
+  }else if(kekka == ans2){
+    ar = "P";
+  }else if(kekka == ans2){
+    ar = "f";
+  }
+  
+  
+  //1.最初の問題文＆回答選択肢＆回答値を設定
+let i=0;
+$("#quest").text( qs[i] );
+$("#toi1").text(toi[i][0]);
+$("#toi2").text(toi[i][1]);
+let k=1;
+$("h1").text("第"+k+"問");
+
+  //2.ラジオボタンをクリックしたらイベント発生！(クリックイベント)
+  $("[name=toi]").on("click",function(){
+    const v = $(this).val();
+    
+    if(k<3){
+        k++;
+        $("h1").text("第"+k+"回");
+    }
+
+    if(i<2){
+      i++;
+      $("#quest").text( qs[i] );
+      $("#toi1").text(toi[i][0]);
+      $("#toi2").text(toi[i][1]);
+    }else if(i==2){
+      $("h1").text("診断結果");
+      $("#quest").text("あなたは「" + ar + "」タイプです");
+      $("#sts").remove();
+    }
+
+
+  
+  });
+
+
+
+
+
+
+
+
+//ここまでが記述領域［END］
+</script>
+</body>
+</html>
